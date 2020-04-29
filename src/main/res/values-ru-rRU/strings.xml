@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CryptoChat</string>
+    <string name="text_send">Отправить</string>
+    <string name="input_message">Введите сообщение</string>
+    <string name="message_avatar">Аватар отправителя</string>
+    <string name="Invate_name">Введите ваше имя</string>
+    <string name="text_Save">Сохранить</string>
+    <string name="text_usersonline">Пользователей онлайн: %s</string>
+</resources>

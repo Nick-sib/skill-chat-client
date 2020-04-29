@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CryptoChat</string>
+    <string name="text_send">Send</string>
+    <string name="input_message">Input message</string>
+    <string name="message_avatar">Sender avatar</string>
+    <string name="Invate_name">Enter your name</string>
+    <string name="text_Save">Save</string>
+    <string name="text_usersonline">"Users online: %s "</string>
+</resources>
