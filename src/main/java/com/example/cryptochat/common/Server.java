@@ -100,7 +100,7 @@ public class Server {
         String userName = u.getName();
         if (status.isConnected()) {
             if (onUserEventsListener != null)
-                onUserEventsListener.UserCONNECED(u.getId(), userName == null ? "???" : userName, names.size());
+                onUserEventsListener.UserCONNECED(userName == null ? "???" : userName, names.size());
 
             names.put(u.getId(), u.getName());
 
