@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.os.Looper;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -212,19 +211,35 @@ public class MainActivity extends AppCompatActivity implements UserEvents{
 
     @SuppressLint("StringFormatMatches")
     @Override
-    public void UserCONNECED(long userID, String userName, int totalCount) {
-        Looper.prepare();
+    public void UserCONNECED(final String userName, final int totalCount) {
+        runOnUiThread(new Runnable() {
+                          @Override
+                          public void run() {
+                              tv_UsersOnline.setText(String.format(getString(R.string.text_usersonline), totalCount));
+
+                              Toast.makeText(mContext, "User: " + userName + " CONNECED",  Toast.LENGTH_LONG).show();
+                          }
+                      });
+        /*Looper.prepare();
         tv_UsersOnline.setText(String.format(getString(R.string.text_usersonline), totalCount));
         //Log.d("myLOG", String.format(getString(R.string.text_usersonline), totalCount));
         Toast.makeText(this, "User: " + userName + " CONNECED",  Toast.LENGTH_LONG).show();
-        Looper.loop();
+        Looper.loop();*/
     }
 
     @SuppressLint("StringFormatMatches")
     @Override
-    public void UserDISCONNECED(int totalCount) {
-        Looper.prepare();
+    public void UserDISCONNECED(final int totalCount) {
+        runOnUiThread(new Runnable() {
+                          @Override
+                          public void run() {
+                              tv_UsersOnline.setText(String.format(getString(R.string.text_usersonline), totalCount));
+
+                          }
+                      }   );
+
+        /*Looper.prepare();
         tv_UsersOnline.setText(String.format(getString(R.string.text_usersonline), totalCount));
-        Looper.loop();
+        Looper.loop();*/
     }
 }
